@@ -1,0 +1,16 @@
+{
+    "name": "jbxss/app-notas",
+    "description": "Aplicacion de notas en php",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Jbxss\\AppNotas\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Juan Bossa"
+        }
+    ],
+    "require": {}
+}
