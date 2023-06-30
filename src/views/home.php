@@ -12,20 +12,30 @@ $notes = Note::getAll();
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>home</title>
+    <title>Home</title>
+    <link rel="stylesheet" href="src/views/resources/main.css">
+    <?php include 'resources/includes/bootstrap_header.php' ?>
 </head>
 
 <body>
-    <h1>home</h1>
+    <?php require 'resources/navbar.php' ?>
+    <div class="p-4">
+        
+    <h1 class="text-center pt-3">Start writing notes now!</h1>
+    <p class="text-secondary text-center">Write and edit your notes</p>
 
-    <?php foreach ($notes as $note) : ?>
-        <a href="?view=view&id=<?= $note->getUUID(); ?>">
-            <div class="note-preview">
-                <div class="title"><?= $note->getTitle() ?></div>
+    <div class="row justify-content-center align-items-center">
+        <?php foreach ($notes as $note) : ?>
+            <div class="col-3 card card-body m-4">
+                <h5 class="card-title text-center"><?= $note->getTitle() ?></h5>
+                <p class="card-text text-center text-secondary"><?= $note->getContent() ?></p>
+                <a href="?view=view&id=<?= $note->getUUID(); ?>" class="btn text-light" style="background-color: #17c37d;">Edit</a>
             </div>
-        </a>
-    <?php endforeach ?>
+        <?php endforeach ?>
+    </div>
 
+    
+    <?php include 'resources/includes/bootstrap_footer.php' ?>
 </body>
 
 </html>

@@ -1,0 +1,72 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 0;
+    margin: 0;
+    background-color: #efefef;
+}
+
+form {
+    padding: 10px;
+    box-sizing: border-box;
+    width: 70%;
+    margin: 20px auto;
+    gap: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+input[type="text"], textarea {
+    padding: 10px;
+    font-size: 18px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+
+.notes-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    padding: 10px;
+}
+
+.notes-container a {
+    color: black;
+    text-decoration: none;
+}
+
+.note-preview {
+    background-color: white;
+    width: 400px;
+    height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    border: solid 2px transparent;
+    border-radius: 5px;
+}
+
+.note-preview:hover {
+    border: solid 2px #2093ff;
+}
+
+nav {
+    background-color: black;
+    color: white;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: row;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    display: block;
+    padding: 10px 15px;
+}
+

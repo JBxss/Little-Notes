@@ -13,29 +13,50 @@ if (count($_POST) > 0 && isset($_GET['id'])) {
     $note->setContent($content);
 
     $note->update();
-
+    header('Location: ?view=home');
 } else if (isset($_GET['id'])) {
     $note = Note::get($_GET['id']);
 } else {
-    header('Location: ?view=home');
+    header('location: ?view=home');
 }
 
 ?>
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="src/views/resources/main.css">
+    <?php include 'resources/includes/bootstrap_header.php' ?>
 </head>
+
 <body>
-    <h1>veeeer</h1>
+    <?php require 'resources/navbar.php' ?>
+
+    <h1 class="text-center pt-3">View your notes!</h1>
+    <p class="text-secondary text-center">you can edit the notes too</p>
+
     <form action="?view=view&id=<?= $note->getUUID(); ?>" method="POST">
-        <input type="text" name="title" placeholder="Titulo..." value="<?= $note->getTitle() ?>">
-        <input type="hidden" name="id" value="<?= $note->getUUID(); ?>">
-        <textarea name="content" cols="30" rows="10"><?= $note->getContent() ?></textarea>
-        <input type="submit" value="Update note">
+
+        <div class="mb-3">
+            <label class="form-label">Note</label>
+            <input class="form-control" type="text" name="title" placeholder="Title..." value="<?= $note->getTitle() ?>">
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Description</label>
+            <textarea class="form-control" name="content" cols="10" rows="6"><?= $note->getContent() ?></textarea>
+        </div>
+
+        <input class="form-control" type="hidden" name="id" value="<?= $note->getUUID(); ?>">
+        <input class="btn text-light" style="background-color: #17c37d;" type="submit" value="Update note">
+        
     </form>
+
+    <?php include 'resources/includes/bootstrap_footer.php' ?>
 </body>
+
 </html>
