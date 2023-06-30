@@ -21,7 +21,7 @@ if (count($_POST) > 0) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Crea una nueva nota</title>
+    <title>Little Notes</title>
     <link rel="stylesheet" href="src/views/resources/main.css">
     <?php include 'resources/includes/bootstrap_header.php' ?>
 </head>
@@ -49,7 +49,7 @@ if (count($_POST) > 0) {
     </form>
 
     <?php include 'resources/includes/bootstrap_footer.php' ?>
-    
+
 </body>
 
 </html>
