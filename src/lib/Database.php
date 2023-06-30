@@ -17,7 +17,7 @@ class Database{
         $this -> host = "localhost";
         $this -> db = "notas";
         $this -> user = "root";
-        $this -> password = "root";
+        $this -> password = "";
         $this -> charset = "utf8mb4";
     }
 
@@ -30,7 +30,6 @@ class Database{
             ];
             $pdo = new PDO($connection, $this->user, $this->password, $options);
             return $pdo;
-
         } catch (PDOException $th) {
             throw $th;
         }

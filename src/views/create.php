@@ -1,9 +1,20 @@
 <?php
 use Jbxss\AppNotas\models\Note;
 
-if(count($_POST) > 0){
+
+echo $_POST['title'].$_POST['content'];
+
+    if(count($_POST) > 0){
+        $title = $_POST['title'];
+        $content = $_POST['content'];
+
+        echo $title.$content;
+        
     
-}
+        $note = new Note($title, $content);
+        $note->save();
+    }
+    
 ?>
 
 <!DOCTYPE html>
@@ -17,8 +28,8 @@ if(count($_POST) > 0){
     <h1>Crea una nota</h1>
     <form action="?view=create" method="POST">
         <input type="text" name="title" placeholder="Titulo...">
-        <textarea name="content" id="" cols="30" rows="10"></textarea>
-        <input type="submit" value="Crear Nota">
+        <textarea name="content" cols="30" rows="10"></textarea>
+        <input type="submit" value="Create note">
     </form>
 </body>
 </html>

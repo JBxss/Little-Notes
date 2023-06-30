@@ -18,7 +18,7 @@ class Note extends Database {
     // CREAR NOTAS Y GUARDARLAS EN LA BASE DE DATOS
     public function save() {
         $query = $this->connect()->prepare("INSERT INTO notes (uuid, title, content, updated) VALUES(:uuid, :title, :content, NOW())");
-        $query->execute(["title" => $this->title, 'uuid' => $this->uuid, 'content' => $this->content]);
+        $query->execute(['title' => $this->title, 'uuid' => $this->uuid, 'content' => $this->content]);
     }
 
     public function update() {
@@ -33,6 +33,19 @@ class Note extends Database {
 
         $note = Note::createFromArray($query->fetch(PDO::FETCH_ASSOC));
         return $note;
+    }
+
+    public static function getAll() {
+        $notes =[];
+        $db = new Database();
+        $query = $db->connect()->query("SELECT * FROM notes");
+
+        while($record = $query->fetch(PDO::FETCH_ASSOC)){
+            $note = Note::createFromArray($record);
+            array_push($notes, $note);
+        }
+
+        return $notes;
     }
 
     public static function createFromArray($arr): Note {
