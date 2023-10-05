@@ -44,7 +44,7 @@ if (count($_POST) > 0) {
             <textarea class="form-control" name="content" cols="10" rows="6"></textarea>
         </div>
 
-        <input class="btn text-light" style="background-color: #17c37d;" type="submit" value="Create note">
+        <input class="btn text-light" style="background-color: #fcb045;" type="submit" value="Create note">
 
     </form>
 

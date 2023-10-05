@@ -52,7 +52,7 @@ if (count($_POST) > 0 && isset($_GET['id'])) {
         </div>
 
         <input class="form-control" type="hidden" name="id" value="<?= $note->getUUID(); ?>">
-        <input class="btn text-light" style="background-color: #17c37d;" type="submit" value="Update note">
+        <input class="btn text-light" style="background-color: #fcb045;" type="submit" value="Update note">
 
     </form>
 

@@ -27,9 +27,9 @@ $notes = Note::getAll();
     <div class="row justify-content-center align-items-center">
         <?php foreach ($notes as $note) : ?>
             <div class="col-3 card card-body m-4">
-                <h5 class="card-title text-center"><?= $note->getTitle() ?></h5>
+                <h5 class="card-title text-center mb-4"><?= $note->getTitle() ?></h5>
                 <p class="card-text text-center text-secondary"><?= $note->getContent() ?></p>
-                <a href="?view=view&id=<?= $note->getUUID(); ?>" class="btn text-light" style="background-color: #17c37d;">Edit</a>
+                <a href="?view=view&id=<?= $note->getUUID(); ?>" class="btn text-light" style="background-color: #fcb045;">Edit</a>
             </div>
         <?php endforeach ?>
     </div>
