@@ -1,6 +1,17 @@
 # Little-Notes
 Esta es una aplicación de anotaciones desarrollada en PHP y MySQL, diseñada para permitir a los usuarios tomar y gestionar notas de manera eficiente. La aplicación utiliza Composer para la gestión de dependencias y Bootstrap para el diseño y la interfaz de usuario receptiva.
 
+## Capturas de Pantalla
+
+![Captura de Pantalla 1](assets/screenshot.png)
+*Página principal con la lista de Notitas*
+
+![Captura de Pantalla 2](assets/screenshot2.png)
+*Página de Creacion de Notitas*
+
+![Captura de Pantalla 3](assets/screenshot3.png)
+*Página de Edicion de Notitas*
+
 ## Características principales
 
 - **Gestión de notas:** Los usuarios pueden crear y editar notas en la aplicación.
